@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Authentification</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="auth-cont">
+		<div class="auth-greetings">
+			<div class="auth-logo">
+				<img src="icons/str-logo.png" alt="logo">
+			</div>
+			<div class="auth-str-info">
+				<h2>Добро пожаловать!</h2>
+				<p><b>STR</b> - это электронный журнал для комфортного, быстрого управления банком информации СТО, основная задача какого максимально улутшить и автоматизировать работу предприятия.</p>
+			</div>
+		</div>
+		<div class="auth-menu">
+			<button id="registerUser">Регистрация</button>		
+			<button id="loginUser">Вход</button>			
+		</div>
+		<div class="auth-content" id="logRegCont">
+<!-- 			<input type="text" id="loginName" placeholder="Имя пользователя *">
+			<input type="password" id="loginPass" placeholder="Пароль *">
+			<input type="submit" id="loginAccept" value="Подтвердить *"> -->
+
+
+<!-- 			<input type="text" id="regName" placeholder="Имя пользователя *">
+			<input type="password" id="regPass" placeholder="Пароль *">
+			<input type="password" id="regConfPass" placeholder="Подтвердите пароль *">
+			<input type="submit" id="regAccept" value="Подтвердить"> -->
+		</div>
+		<p id="authMessage"></p>
+	</div>
+<!-- 	Добро пожаловать.
+	STR - это электронный журнал для комфортного, быстрого управления банком информации СТО, основная задача какого максимально улутшить и автоматизировать работу предприятия. -->
+	<script>
+		require('./authentication.js');
+	</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title></title>
+</head>
+<body>
+
+	<div class="current_user_icon">
+		<div class="current_user_panel">
+			<h4>Текущая учетная запись</h4>
+			<span id="currentUser"></span>
+			<span id="changeCurrentUser">Сменить</span>
+		</div>
+	</div>
+
+<!-- 	<div class="modal" id="modalEdit">
+		<div class="modal-content">
+			<span class="close" id="modalClose">&times;</span>
+			<select id="oldCategories">
+				<option value="0">Выберите категорию</option>
+			</select>
+			<input type="text" placeholder="Или создайте новую кат." id="newCategories">
+			<br>
+			<input type="text" placeholder="Добавьте пункт в кат." id="pointToCat">
+			<button id="addToRepairObj">Добавить в БД</button>
+		</div>
+	</div> -->
+
+	<header>
+		<a href="page-search.html">
+			<span>Поиск клиента</span>
+		</a>
+		<a href="#" class="header-checked">
+			<span>Добавить клиента</span>
+		</a>
+	</header>
+
+	<div class="notification" id="notificationCont">
+		<span class="notification-text" id="notificationMessage"></span>
+	</div>
+
+
+	<section class="add-container">
+		<h2>Общие данные</h2>
+		<div class="personal-info">
+			<div>
+				<label for="clientName">ФИО</label>
+				<input type="text" id="clientName">
+			</div>
+			<div>
+				<label for="clientPhoneNumber" class="must-have-field">Мобильный номер</label>
+				<input type="number" id="clientPhoneNumber" maxlength="20">
+			</div>
+			<div>
+				<label for="repairDate">Дата ремонта</label>
+				<input type="date" id="repairDate">
+			</div>
+			<div>
+				<label for="repairCost">Цена ремонта (UAH)</label>
+				<input type="number" id="repairCost">
+			</div>
+			<div>
+				<label for="clientNote">Заметки (Доп. инф.)</label>
+				<textarea id="clientNote" cols="40" rows="7"></textarea>
+			</div>
+		</div>
+	</section>
+
+	<section class="add-container">
+		<h2>Ваша машина</h2>
+		<!-- <button class="modalEdit" id="modalEditCars">Добавить элементы</button> -->
+		<div class="car-documents">
+			<div>
+				<label class="must-have-field" for="vinCode">Vin-код</label>	
+				<input type="text" id="vinCode" maxlength="17">
+			</div>
+			<div>
+				<label class="must-have-field" for="carNumber">Автономера</label>
+				<input type="text" id="carNumber" maxlength="10">
+			</div>
+			<div>
+				<label class="must-have-field" for="carMarque">Выберите марку авто</label>
+				<select id="carMarque">
+					<option value="0">Автомобиль</option>
+				</select>
+			</div>
+			<div>
+				<label class="must-have-field" for="carModel">Выберите модель авто</label>
+				<select id="carModel">
+					<option value="0">Модель</option>
+				</select>
+			</div>
+			<div>
+				<label for="carYear" class="must-have-field">Год выпуска</label>
+				<input type="number" min="1900" max="3099" maxlength="4" step="1" value="2018" id="carYear">
+			</div>
+			<div>
+				<label for="carColor">Цвет авто</label>
+				<input type="color" id="carColor" name="head" value="#e66465">
+			</div>
+		</div>
+	</section>
+
+	<section class="add-container">
+		<h2>Что чиним?</h2>
+		<!-- <span id="addRepairObj"></span> -->
+		<p class="must-have-field" id="repair-category-option">Ваш выбор: </p>
+		<div class="add-repair" id="repair-container">
+<!-- 		<div class="category">
+			<h3 categoryid="0">Engine</h3>
+			<ul class="category-points">
+				<li repobjid="0">smth 1</li>
+				<li repobjid="0">smth 2</li>
+				<li repobjid="0">smth 3</li>
+				<li repobjid="0">smth 4</li>
+				<li repobjid="0">smth 5</li>
+				<li repobjid="0">smth 6</li>
+			</ul>
+		</div> -->
+	</div>
+</section>
+
+<div class="add-client-container">	
+	<button id="addClient">Добавить клиента</button>
+</div>
+
+<script>
+	require('./page-add.js');
+</script>
+</body>
+</html>

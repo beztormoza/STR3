@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title></title>
+</head>
+<body>
+	<div class="current_user_icon">
+		<div class="current_user_panel">
+			<h4>Текущая учетная запись</h4>
+			<span id="currentUser"></span>
+			<span id="changeCurrentUser">Сменить</span>
+		</div>
+	</div>
+
+	<header>
+		<a href="#" class="header-checked">
+			<span>Поиск клиента</span>
+		</a>
+		<a href="page-add.html">
+			<span>Добавить клиента</span>
+		</a>
+	</header>
+
+	<div class="notification" id="notificationCont">
+		<span class="notification-text" id="notificationMessage"></span>
+	</div>
+
+	<section class="search-container">
+		<div class="filter-bar">
+			<h2>Фильтр</h2>
+			<div class="filter-bar-fields">
+				<div>
+					<label for="vinCode">Vin-код</label>	
+					<input type="text" id="vinCode" maxlength="17" sqlclause="clients.clients_vincode">
+				</div>
+				<div>
+					<label for="carNumber">Автономера</label>
+					<input type="text" id="carNumber" maxlength="10" sqlclause="clients.client_vehicle_number">
+				</div>
+				<div>
+					<label for="clientName">ФИО</label>
+					<input type="text" id="clientName" sqlclause="clients.clients_name">
+				</div>
+			</div>
+			<div class="filter-bar-panel">
+				<button id="filterSearch">Поиск</button>
+				<button id="filterClear">Очистить</button>
+			</div>
+			<button id="showAllDb">Просмотреть все записи</button>
+		</div>
+		<div class="search-result-cont" id="searchContainer">
+			<h2>Результаты поиска</h2>
+			<!-- <div class="client-info-cont">
+				<div class="client-info-delete"></div>
+				<table>
+					<tr>
+						<td>ID-клиента</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Vin-код</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Автономер</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Автомобиль</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Тех. проблема</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Заметки</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Дата ремонта</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Цена ремонта</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>ФИО</td>
+						<td></td>
+					</tr>
+				</table>
+			</div> -->
+		</section>
+		<script>
+			require('./page-search.js');
+		</script>
+	</body>
+	</html>

@@ -1,0 +1,598 @@
+/*DEFAULTS*/
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+/*MODAL WINDOWS*/
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;	
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+	background-color: #AEAEAE;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 5px;
+	width: 50%;
+	position: relative;
+}
+.modal-content input,
+.modal-content select, 
+.modal-content button {
+	width: 200px;
+	padding: 5px 10px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	text-align: center;
+	margin: 15px 50px;
+	font-size: 1.1em;
+}
+.modal-content button {
+	padding: 8px 10px;
+	font-size: 1.2em;
+	color: white;
+	background-color: #3403DC;
+	transition: all .3s linear;
+}
+.modal-content button:hover {
+	background-color: #5525FC;
+}
+.close {
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	cursor: pointer;
+}
+.close:hover {
+	color: red;
+}
+
+
+/*AUTHENTIFICATION*/
+.auth-cont {
+	width: 100%;
+	height: 96.5vh;
+	padding-top: 20px;
+	background-color: #3D3D3E;
+}
+
+.auth-greetings {
+	width: 98%;
+	min-height: 100px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+}
+.auth-logo {
+	padding: 25px;
+	background-color: white;
+	border-radius: 50%;
+	transition: all 0.5s linear;	
+}
+.auth-logo:hover {
+	background-color: lightgray;
+	padding: 35px;
+}
+
+.auth-logo img {
+	width: 120px;
+	height: 120px;
+}
+.auth-str-info {
+	color: white;
+	margin-left: 20px;
+}
+.auth-menu {
+	width: 60%;
+	height: 50px;	
+	margin: auto;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: stretch;
+}
+#registerUser,
+#loginUser {
+	width: 48%;
+	color: white;
+	border: 2px solid white;
+	background-color: #727274;
+	font-size: 1.2em;
+	transition: all .3s linear;
+}
+#registerUser:hover,
+#loginUser:hover {
+	background-color: #53AD16;
+}
+
+.auth-content {
+	width: 80%;
+	min-height: 100px;
+	margin: auto;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.auth-content input {
+	width: 200px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	border: 2px solid white; 
+	color: white;
+	background-color: inherit;
+}
+.auth-content input[type="submit"] {
+	background-color: #727274;
+	transition: all 0.2s linear;
+}
+.auth-content input[type="submit"]:hover {
+	background-color: #0C0CDA;
+}
+#authMessage {
+	text-align: center;
+	color: white
+}
+
+/*REGISTER ENTRY*/
+.current_user_icon {
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	z-index: 5000;
+	top: 90px;
+	left: 20px;
+	cursor: pointer;
+	background: url("icons/user.png") no-repeat center center;
+	background-size: 40px 40px;
+}
+.current_user_icon:hover .current_user_panel {
+	display: block;
+}
+.current_user_panel {
+	display: none;
+	width: 150px;
+	height: 200px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	border-radius: 10px;
+	background-color: lightgray;
+	text-align: center;
+	padding: 10px 5px;
+}
+#currentUser {
+	display: block;
+	margin-top: 20px;
+	color: red;
+}
+#changeCurrentUser {
+	display: block;
+	margin-top: 50px;
+}
+#changeCurrentUser:hover {
+	text-decoration: underline;
+	color: blue;
+}
+
+
+/*ADVANCED STYLES*/
+.notification {
+	position: fixed;
+	z-index: 100;
+	left: 50%;
+	top: 100px;
+	transform: translateX(-50%);
+	max-width: 500px;
+	width: 100%;
+	min-height: 50px;
+	padding: 15px 15px;
+	background-color: rgba(45, 60, 70, 0.8);
+	border-radius: 10px;
+	display: none;
+	opacity: 0;
+}
+.notification-text {
+	display: block;
+	margin: auto;
+	color: white;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+
+/*HEADER*/
+header {
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	background-color: #3D3D3E;
+	padding: 5px;
+}
+header a {
+	text-decoration: none;
+	flex-grow: 1;
+	display: flex;
+	background-color: #727274;
+	border-radius: 5px;
+	transition: all .3s linear; 
+}
+header a span {
+	color: white;
+	font-size: 2em;
+	margin: auto;
+}
+header a:nth-child(2) {
+	margin: 0 5px;
+}
+
+header a:hover {
+	background-color: #939395;
+}
+.header-checked {
+	background-color: #939395;
+	border-bottom: 2px solid white;
+}
+
+
+/* ADD.HTML STYLES */
+
+.personal-info {
+	width: 50%;
+	margin: auto;
+	font-size: 1.1em;
+}
+.personal-info div {
+	margin-bottom: 20px;
+	font-size: 1.2em;
+	display: flex;
+	justify-content: space-between;
+}
+.personal-info div input,
+#clientNote,
+#clientName {
+	margin-left: 10px;
+	padding: 2px 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	font-size: 0.9em;
+}
+#clientName,
+#clientPhoneNumber {
+	text-align: center;
+}
+#repairDate {
+	width: 160px;
+}
+#repairCost {
+	width: 110px;
+}
+.must-have-field {
+	color: #F91C21;
+}
+.must-have-field:after {
+	content: " *";
+}
+
+.car-documents {
+	width: 50%;
+	margin: auto;
+	position: relative;
+}
+.car-documents div {
+	margin-bottom: 20px;
+	font-size: 1.2em;
+	display: flex;
+	justify-content: space-between;
+}
+#vinCode,
+#carNumber,
+#carYear {
+	padding: 2px 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	font-size: 0.9em;
+	text-align: center;
+}
+#vinCode {
+	width: 180px;
+}
+#carNumber {
+	width: 120px;
+}
+#carMarque,
+#carModel {
+	width: 200px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	font-size: 0.9em;
+}
+
+
+.add-repair {
+	width: 1200px;
+	min-height: 100px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
+	flex-wrap: wrap;
+}
+.add-container {
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+	padding: 20px;
+	border: 4px solid #B1B1B1;
+	border-radius: 10px;
+	position: relative;
+}
+.add-container h2 {
+	position: absolute;
+	top: -25px;
+	left: 20px;
+	color: #B1B1B1;
+	background-color: white;
+	font-weight: bold;
+	font-size: 2em;
+	padding: 0 5px;
+	margin: 0 0 20px 0;
+}
+.add-container p {
+	padding: 0;
+	margin: 5px 0 0 50px;
+	font-size: 1.5em;
+}
+.category {
+	width: 268px;
+	min-height: 300px;
+	margin: 5px;
+	padding: 0 10px;
+	border: 1px solid blue;
+	border-radius: 10px;
+}
+.category h3 {
+	font-size: 1.5em;
+}
+.category-points {
+	list-style-type: none;
+}
+.category-points li {
+	padding: 2px;
+	margin-left: -20px;
+	font-size: 1.2em;
+}
+.category-points li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.add-client-container {
+	width: 100%;
+	text-align: center;
+	margin: 30px 0 50px 0;
+}
+#stateNotion {
+	margin-top: 20px;
+	font-style: italic;
+	font-size: 1.1em;
+}
+#addClient {
+	color: white;
+	padding: 10px 20px;
+	font-size: 1.2em;
+	border: none;
+	border-radius: 5px;
+	background-color: #53AD16;
+}
+
+
+
+
+/*SEARCH.HTML STYLES*/
+.search-container {
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+	padding: 5px;
+	border: 4px solid #B1B1B1;
+	border-radius: 10px;
+	background-color: #3D3D3E;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: white;
+}
+.filter-bar {
+	width: 25%;
+}
+.filter-bar h2,
+.search-result-cont h2 {
+	text-align: center;
+	font-size: 2em;
+}
+.filter-bar-fields {
+	width: 95%;
+	margin: auto;
+	font-size: 1.3em;
+/*	border: 1px solid red;*/
+}
+.filter-bar-fields div {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.filter-bar-panel {
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;	
+}
+#filterSearch,
+#filterClear,
+#showAllDb {
+	color: white;
+	padding: 5px 10px;
+	font-size: 1.2em;
+	border: none;
+	border-radius: 5px;
+	background-color: #53AD16;
+}
+#filterClear {
+	background-color: #FF5155;
+}
+#showAllDb {
+	display: block;
+	width: 90%;
+	margin: auto;
+	padding: 10px 10px;
+	margin-top: 30px;
+	background-color: #0C0CDA;
+}
+.search-result-cont {
+	width: 74.2%;
+	overflow-y: scroll;
+}
+.filter-bar,
+.search-result-cont {
+	height: 660px;
+	border-radius: 5px;
+	background-color: #727274;
+}
+
+.client-info-cont {
+	width: 94%;
+	min-height: 100px;
+	margin: 30px auto 10px auto;
+	padding: 15px 5px;
+	border-radius: 5px;
+	background-color: #3D3D3E;
+	position: relative;
+}
+
+.client-info-cont table {
+	width: 100%;
+	max-width: 800px;	
+	margin: auto;
+	font-size: 1.2em;
+	border-collapse: collapse;
+}
+.client-info-cont table tr {
+	transition: all .2s linear;
+}
+.client-info-cont table tr:hover {
+	background-color: #818183;
+}
+.client-info-cont table tr td {
+	width: 50%;
+	padding: 5px 10px;
+	border: 2px solid #727274;
+}
+
+.client-info-delete {
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	width: 32px;
+	height: 32px;
+	border: 2px solid white;
+	border-radius: 50%;
+}
+.client-info-delete:before,
+.client-info-delete:after {
+	position: absolute;
+	left: 15px;
+	content: ' ';
+	height: 33px;
+	width: 2px;
+	background-color: white;
+}
+.client-info-delete:before {
+	transform: rotate(45deg);
+}
+.client-info-delete:after {
+	transform: rotate(-45deg);
+}
+.client-info-delete:hover:after, 
+.client-info-delete:hover:before {
+	background-color: red
+}
+.client-info-delete:hover {
+	border-color: #FF5155;
+	cursor: pointer;
+}
+
+#addRepairObj {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	border: 2px solid lightgray;
+	border-radius: 50%;
+}
+#addRepairObj:before,
+#addRepairObj:after {
+	content: '';
+	display: block;
+	width: 30px;
+	height: 2px;
+	background-color: lightgray;
+	position: relative;
+}
+#addRepairObj:before {
+	top: 15px;
+	transform: rotate(90deg);
+}
+#addRepairObj:after {
+	top: 12.5px;
+}
+
+#addRepairObj:hover {
+	border-color: blue;
+}
+#addRepairObj:hover:before,
+#addRepairObj:hover:after {
+	background-color: blue;
+}
+
+
+
+/*используется в js для стилизации вывода инфы о клиенте*/
+.important-row {
+	font-weight: bold;
+	color: #17F1F7;
+}
+.carColorCont {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 30px;
+	vertical-align: middle;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
